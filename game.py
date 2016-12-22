@@ -72,11 +72,12 @@ class Game:
                 neighbors = self.countNeighbors(elInd, rowInd) 
                 if neighbors < 2:
                     self.setCellBoard(elInd, rowInd, False, newBoard)
-                elif neighbors == 2 or neighbors == 3:
+                elif self.getCell(elInd, rowInd) and (neighbors == 2 or neighbors == 3):
                     self.setCellBoard(elInd, rowInd, True, newBoard)
                 elif neighbors > 3:
                     self.setCellBoard(elInd, rowInd, False, newBoard)
-                elif self.getCellBoard(elInd, rowInd, newBoard) == False and neighbors == 3:
+                elif self.getCell(elInd, rowInd) == False and neighbors == 3:
+                    #print("3 neighbors", elInd, rowInd)
                     self.setCellBoard(elInd, rowInd, True, newBoard)
 
         self.board = newBoard
@@ -90,5 +91,7 @@ game.setCell(15, 16, True)
 game.setCell(15, 17, True)
 game.printBoard()
 #print("height", game.height, "width", game.width)
+game.step()
+game.printBoard()
 game.step()
 game.printBoard()
