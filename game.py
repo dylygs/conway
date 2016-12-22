@@ -84,14 +84,4 @@ class Game:
 
 
 
-game = Game(30, 30)
-game.setCell(15, 15, True)
-game.setCell(16, 16, True)
-game.setCell(15, 16, True)
-game.setCell(15, 17, True)
-game.printBoard()
-#print("height", game.height, "width", game.width)
-game.step()
-game.printBoard()
-game.step()
-game.printBoard()
+
